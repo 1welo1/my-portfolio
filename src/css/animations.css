@@ -1,0 +1,79 @@
+/* ==========================================================================
+   ANIMATIONS & MOTION - MOHAMED WALEED (WELO) PORTFOLIO
+   NESH-inspired interactive physics and scroll reveals
+   ========================================================================== */
+
+/* --- Scroll Reveal Primitives (Progressive Enhancement) --- */
+.js-motion-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 650ms var(--ease-smooth), transform 650ms var(--ease-smooth);
+  will-change: opacity, transform;
+}
+
+.js-motion-ready .reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays for Grouped Items */
+.stagger-1 { transition-delay: 80ms; }
+.stagger-2 { transition-delay: 160ms; }
+.stagger-3 { transition-delay: 240ms; }
+.stagger-4 { transition-delay: 320ms; }
+.stagger-5 { transition-delay: 400ms; }
+
+/* --- Logo Letter Motion (NESH-inspired Letter Stagger) --- */
+.brand-link #letter-w,
+.brand-link #letter-e,
+.brand-link #letter-l,
+.brand-link #letter-o {
+  transition: transform 320ms var(--ease-smooth), fill 320ms var(--ease-smooth);
+  transform-origin: center bottom;
+}
+
+.brand-link:hover #letter-w {
+  transform: translateY(-4px) rotate(-1.5deg);
+  transition-delay: 0ms;
+}
+
+.brand-link:hover #letter-e {
+  transform: translateY(-6px) rotate(1deg);
+  transition-delay: 50ms;
+}
+
+.brand-link:hover #letter-l {
+  transform: translateY(-5px) rotate(-1deg);
+  transition-delay: 100ms;
+}
+
+.brand-link:hover #letter-o {
+  transform: translateY(-3px) rotate(1.5deg);
+  transition-delay: 150ms;
+}
+
+/* --- Micro-Interactions --- */
+.pulse-on-hover:hover {
+  animation: subtle-pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .brand-link #letter-w,
+  .brand-link #letter-e,
+  .brand-link #letter-l,
+  .brand-link #letter-o {
+    transform: none !important;
+    transition: none !important;
+  }
+}

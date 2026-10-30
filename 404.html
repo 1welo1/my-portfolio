@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Mohamed Waleed (WELO)</title>
+  <meta name="description" content="The page or resource you are looking for does not exist.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Favicons Suite -->
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="public/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+  <link rel="shortcut icon" href="public/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="src/css/style.css">
+
+  <style>
+    .error-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-8, 2rem) var(--space-4, 1rem);
+      background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(0, 255, 135, 0.08) 0%, rgba(5, 5, 7, 0) 70%), #050507;
+      color: #F3F4F6;
+    }
+
+    .error-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #F87171;
+      margin-bottom: 1.5rem;
+    }
+
+    .error-code {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: clamp(5rem, 15vw, 9rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(180deg, #FFFFFF 30%, rgba(255, 255, 255, 0.25) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+
+    .error-title {
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+
+    .error-desc {
+      max-width: 500px;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: #9CA3AF;
+      margin: 0 auto 2.5rem;
+    }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-outline-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      text-decoration: none;
+      color: #E5E7EB;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline-custom:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <main class="error-container">
+    <div class="error-badge">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
+      Status 404 • Missing Endpoint
+    </div>
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">Destination Not Found</h2>
+    <p class="error-desc">
+      The automation path or resource you requested doesn't exist, was moved, or is undergoing system maintenance.
+    </p>
+
+    <div class="error-actions">
+      <a href="index.html" id="home-link" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; border-radius: 9999px; font-weight: 600; text-decoration: none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Return to Homepage
+      </a>
+      <a href="https://wa.me/201201212301" target="_blank" rel="noopener noreferrer" class="btn-outline-custom">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        Contact on WhatsApp
+      </a>
+    </div>
+  </main>
+
+  <script>
+    // Smart routing: On a live web server (HTTP/HTTPS) route to root '/', locally route to 'index.html'
+    if (window.location.protocol.startsWith('http')) {
+      var homeLink = document.getElementById('home-link');
+      if (homeLink) homeLink.setAttribute('href', '/');
+    }
+  </script>
+</body>
+</html>
+

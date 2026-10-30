@@ -1,0 +1,19 @@
+{
+  "name": "mohamed-waleed-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-grade AI conversational sales agents portfolio of Mohamed Waleed (WELO)",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "ai-automation",
+    "sales-agents",
+    "conversational-ai"
+  ],
+  "author": "Mohamed Waleed",
+  "license": "UNLICENSED"
+}
+

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   DESIGN TOKENS - MOHAMED WALEED (WELO) PORTFOLIO
+   Strictly adheres to calm muted light palette (design-brief.md)
+   No pure white (#FFFFFF) and no pure black (#000000)
+   ========================================================================== */
+
+:root {
+  /* --- Color Palette --- */
+  --bg-primary: #E6EAF0;          /* Calm light canvas */
+  --bg-secondary: #DBE2EC;        /* Alternating sections (About / FAQ) */
+  --bg-card: #F0F3F7;             /* Elevated card surfaces */
+  --bg-card-hover: #E8EEF5;       /* Card hover state */
+  --border-card: #CFD7E3;         /* Subtle structural borders */
+  --border-card-focus: #A9BAD6;   /* Active/hover border state */
+
+  /* --- Text & Contrast (WCAG 2.1 AA > 10:1) --- */
+  --text-primary: #1C2740;        /* Deep nocturnal navy for headers/body */
+  --text-muted: #4A586F;          /* Calm secondary text and metadata */
+  --text-subtle: #6D7D93;         /* Subdued annotations and dates */
+
+  /* --- Brand Accent --- */
+  --accent: #3A5FA3;              /* Primary actions, active links */
+  --accent-hover: #2F4F8C;        /* Interactive hover depth */
+  --accent-subtle: rgba(58, 95, 163, 0.12); /* Badge tints */
+  --accent-text: #F0F3F7;         /* Contrast button label */
+  --tint-decorative: #A9BAD6;     /* Backdrops & subtle geometric tints */
+
+  /* --- Status Indicators --- */
+  --status-available: #2A7B54;    /* Availability dot */
+  --status-glow: rgba(42, 123, 84, 0.35);
+
+  /* --- Typography --- */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Scales */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 2rem;      /* 32px */
+  --text-4xl: 2.5rem;    /* 40px */
+  --text-5xl: 3.25rem;   /* 52px */
+
+  /* --- Elevation & Shadows --- */
+  --shadow-sm: 0 2px 8px rgba(28, 39, 64, 0.04);
+  --shadow-md: 0 8px 24px rgba(28, 39, 64, 0.06);
+  --shadow-lg: 0 16px 36px rgba(28, 39, 64, 0.09);
+  --shadow-card-hover: 0 20px 40px rgba(28, 39, 64, 0.12);
+
+  /* --- Border Radius --- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* --- Transitions & Timing (NESH-inspired smoothness) --- */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 180ms ease;
+  --transition-base: 280ms var(--ease-smooth);
+  --transition-slow: 550ms var(--ease-smooth);
+
+  /* --- Layout & Spacing --- */
+  --container-max: 1200px;
+  --header-height: 76px;
+  --section-pad-y: clamp(4rem, 8vw, 7.5rem);
+  --section-pad-x: clamp(1.25rem, 4vw, 2.5rem);
+}

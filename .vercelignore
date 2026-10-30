@@ -1,0 +1,13 @@
+# Exclude local development scripts & documentation from production deployment
+_unused_files/
+.git
+.gitignore
+.vercel
+*.bat
+scripts/
+assets/
+public/Picsart_26-10-11_01-26-28-403.png
+asset_inventory.md
+content.md
+design-brief.md
+
