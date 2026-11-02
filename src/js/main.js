@@ -597,6 +597,39 @@
     }
   };
 
+    /* WhatsApp dynamic link generator with bilingual appointment booking */
+  var waNumber = '201043156209';
+  var waMessages = {
+    en: {
+      general: "Hello Mohammed, I'd like to book an appointment to discuss an AI sales agent for my business.",
+      audit: "Hello Mohammed, I'd like to book an appointment for a free Automation Audit.",
+      plan1: "Hello Mohammed, I'd like to book an appointment for the Sprint Automation plan ($450).",
+      plan2: "Hello Mohammed, I'd like to book an appointment for the Growth Sales Funnel plan ($950).",
+      plan3: "Hello Mohammed, I'd like to book a meeting to discuss a Custom Architecture system.",
+      contact: "Hello Mohammed, I'd like to book an appointment."
+    },
+    ar: {
+      general: "مرحباً محمد، أود حجز موعد لمناقشة تطوير وكيل ذكاء اصطناعي لعملي.",
+      audit: "مرحباً محمد، أود حجز موعد لتدقيق أتمتة مجاني لعملي.",
+      plan1: "مرحباً محمد، أود حجز موعد لمناقشة باقة الأتمتة السريعة ($450).",
+      plan2: "مرحباً محمد، أود حجز موعد لمناقشة باقة مسار مبيعات النمو ($950).",
+      plan3: "مرحباً محمد، أود حجز موعد لمناقشة متطلبات بنية معمارية مخصصة.",
+      contact: "مرحباً محمد، أود التواصل وحجز موعد لمشروع جديد."
+    }
+  };
+
+  function updateWhatsAppLinks(lang) {
+    var activeLang = (lang === 'ar') ? 'ar' : 'en';
+    var links = document.querySelectorAll('a[data-wa-type]');
+    links.forEach(function (link) {
+      var type = link.getAttribute('data-wa-type') || 'general';
+      var textMsg = (waMessages[activeLang] && waMessages[activeLang][type])
+        ? waMessages[activeLang][type]
+        : waMessages[activeLang].general;
+      link.href = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(textMsg);
+    });
+  }
+
   var currentLang = 'en';
 
   function applyLanguage(lang) {
@@ -632,6 +665,9 @@
     var mobileCode = document.querySelector('#mobile-lang-toggle-btn .lang-code');
     if (mobileCode) mobileCode.textContent = toggleCodeText;
 
+    // Update all WhatsApp action URLs with prefilled booking message for active language
+    updateWhatsAppLinks(lang);
+
     // Trigger video showcase audio button label update if video module loaded
     if (window.__refreshShowcaseAudioBtn) {
       window.__refreshShowcaseAudioBtn();
@@ -663,6 +699,8 @@
 
     if (savedLang === 'ar') {
       applyLanguage('ar');
+    } else {
+      updateWhatsAppLinks('en');
     }
   }
 
