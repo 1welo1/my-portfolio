@@ -62,7 +62,7 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cairo:wght@600;700;800&family=Dancing+Script:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Preload Hero Portrait for Sub-1.2s LCP -->
 
@@ -70,7 +70,7 @@
 
   <!-- Unified High-Performance Vanilla CSS -->
 
-  <link rel="stylesheet" href="src/css/style.css?v=3.6">
+  <link rel="stylesheet" href="src/css/style.css?v=3.7">
 
   <!-- Structured Data (Schema.org JSON-LD) -->
 
@@ -186,17 +186,17 @@
 
       <nav class="nav-menu" aria-label="Main Navigation">
 
-        <a href="#showcase-video-section" class="nav-link">Demo</a>
+        <a href="#showcase-video-section" class="nav-link" data-i18n="nav_demo">Demo</a>
 
-        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
 
-        <a href="#offers" class="nav-link">Capabilities</a>
+        <a href="#offers" class="nav-link" data-i18n="nav_capabilities">Capabilities</a>
 
-        <a href="#about" class="nav-link">About</a>
+        <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
 
-        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#pricing" class="nav-link" data-i18n="nav_pricing">Pricing</a>
 
-        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a>
 
       </nav>
 
@@ -204,7 +204,12 @@
 
       <div class="header-actions">
 
-        <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'd%20like%20to%20inquire%20about%20an%20AI%20sales%20agent%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm header-cta-btn">Chat on WhatsApp</a>
+        <button id="lang-toggle-btn" class="lang-toggle-btn" type="button" aria-label="Switch Language / تغيير اللغة">
+          <span class="lang-globe-icon" aria-hidden="true">🌐</span>
+          <span class="lang-code">العربية</span>
+        </button>
+
+        <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'd%20like%20to%20inquire%20about%20an%20AI%20sales%20agent%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm header-cta-btn" data-i18n="cta_chat_whatsapp">Chat on WhatsApp</a>
 
         <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
 
@@ -228,21 +233,26 @@
 
     <ul class="mobile-nav-list">
 
-      <li><a href="#showcase-video-section" class="mobile-nav-link">Demo</a></li>
+      <li><a href="#showcase-video-section" class="mobile-nav-link" data-i18n="nav_demo">Demo</a></li>
 
-      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#projects" class="mobile-nav-link" data-i18n="nav_projects">Projects</a></li>
 
-      <li><a href="#offers" class="mobile-nav-link">Capabilities</a></li>
+      <li><a href="#offers" class="mobile-nav-link" data-i18n="nav_capabilities">Capabilities</a></li>
 
-      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#about" class="mobile-nav-link" data-i18n="nav_about">About</a></li>
 
-      <li><a href="#pricing" class="mobile-nav-link">Pricing</a></li>
+      <li><a href="#pricing" class="mobile-nav-link" data-i18n="nav_pricing">Pricing</a></li>
 
-      <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+      <li><a href="#faq" class="mobile-nav-link" data-i18n="nav_faq">FAQ</a></li>
 
     </ul>
 
-    <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'd%20like%20to%20inquire%20about%20an%20AI%20sales%20agent%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">Chat on WhatsApp</a>
+    <button id="mobile-lang-toggle-btn" class="mobile-lang-toggle-btn" type="button" aria-label="Switch Language / تغيير اللغة">
+      <span class="lang-globe-icon" aria-hidden="true">🌐</span>
+      <span class="lang-code">العربية</span>
+    </button>
+
+    <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'd%20like%20to%20inquire%20about%20an%20AI%20sales%20agent%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;" data-i18n="cta_chat_whatsapp">Chat on WhatsApp</a>
 
   </div>
 
@@ -276,9 +286,9 @@
 
               <div id="hero-frame-1" class="hero-frame hero-frame-1">
 
-                <h1 class="hero-title">Mohammed Waleed</h1>
+                <h1 class="hero-title" data-i18n="hero_name">Mohammed Waleed</h1>
 
-                <p class="hero-subtitle">AI Automation Engineer</p>
+                <p class="hero-subtitle" data-i18n="hero_title">AI Automation Engineer</p>
 
               </div>
 
@@ -286,11 +296,11 @@
 
               <div id="hero-frame-2" class="hero-frame hero-frame-2">
 
-                <h2 class="hero-title hero-title-value">Every DM You Answer Late is a Sale Your Competitor Gets.</h2>
+                <h2 class="hero-title hero-title-value" data-i18n="hero_f2_title">Every DM You Answer Late is a Sale Your Competitor Gets.</h2>
 
                 <p class="hero-subtitle hero-subtitle-value">
 
-                  I engineer autonomous conversational AI sales agents for WhatsApp & Instagram that answer in under 20 seconds, handle objections, and close deals around the clock.
+                  <span data-i18n="hero_f2_sub">I engineer autonomous conversational AI sales agents for WhatsApp & Instagram that answer in under 20 seconds, handle objections, and close deals around the clock.</span>
 
                 </p>
 
@@ -300,13 +310,13 @@
 
               <div id="hero-frame-3" class="hero-frame hero-frame-3">
 
-                <p class="hero-lead-text">
+                <p class="hero-lead-text" data-i18n="hero_f3_lead">
 
                   I partner with ambitious brands and retail businesses to transform social messaging inboxes into 24/7 revenue engines.
 
                 </p>
 
-                <p class="hero-body-text">
+                <p class="hero-body-text" data-i18n="hero_f3_body">
 
                   Instead of static chatbot templates that frustrate buyers, I engineer custom conversational AI systems directly connected to your live product catalog, pricing, and CRM. Every system is built to protect your brand reputation, deliver instant answers in under 20 seconds, and hand off high-ticket leads seamlessly to your sales reps.
 
@@ -318,9 +328,9 @@
 
             <div class="hero-cta-group">
 
-              <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'd%20like%20to%20book%20a%20free%20Automation%20Audit%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book an Automation Audit</a>
+              <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'd%20like%20to%20book%20a%20free%20Automation%20Audit%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="hero_btn_audit">Book an Automation Audit</a>
 
-              <a href="#projects" class="btn btn-secondary">Explore Featured Work</a>
+              <a href="#projects" class="btn btn-secondary" data-i18n="hero_btn_work">Explore Featured Work</a>
 
             </div>
 
@@ -330,7 +340,7 @@
 
                 <span class="stat-value">&lt; 20s</span>
 
-                <span class="stat-label">Average Lead Reply</span>
+                <span class="stat-label" data-i18n="hero_stat1_label">Average Lead Reply</span>
 
               </div>
 
@@ -338,7 +348,7 @@
 
                 <span class="stat-value">24/7</span>
 
-                <span class="stat-label">Automated Conversion</span>
+                <span class="stat-label" data-i18n="hero_stat2_label">Automated Conversion</span>
 
               </div>
 
@@ -380,11 +390,11 @@
 
         <div class="section-header text-center reveal-on-scroll" style="margin-bottom: 2rem;">
 
-          <span class="section-eyebrow">SYSTEM SHOWCASE</span>
+          <span class="section-eyebrow" data-i18n="video_eyebrow">SYSTEM SHOWCASE</span>
 
-          <h2 class="section-title">See The AI Sales Agent in Action</h2>
+          <h2 class="section-title" data-i18n="video_title">See The AI Sales Agent in Action</h2>
 
-          <p class="section-desc">80 seconds showing live qualification, branch inventory lookup, objection handling, and checkout guidance.</p>
+          <p class="section-desc" data-i18n="video_desc">80 seconds showing live qualification, branch inventory lookup, objection handling, and checkout guidance.</p>
 
         </div>
 
@@ -460,13 +470,13 @@
 
         <div class="section-header reveal-on-scroll">
 
-          <span class="section-eyebrow">FLAGSHIP CASE STUDY</span>
+          <span class="section-eyebrow" data-i18n="project_section_eyebrow">FLAGSHIP CASE STUDY</span>
 
-          <h2 class="section-title">Live WhatsApp & Meta Sales Engine in Production</h2>
+          <h2 class="section-title" data-i18n="project_section_title">Live WhatsApp & Meta Sales Engine in Production</h2>
 
           <p class="section-desc">
 
-            See the actual conversational sales agent running live: verifying physical branch inventory, recommending audio gear by budget, and closing inquiries in seconds.
+            <span data-i18n="project_section_desc">See the actual conversational sales agent running live: verifying physical branch inventory, recommending audio gear by budget, and closing inquiries in seconds.</span>
 
           </p>
 
@@ -530,23 +540,23 @@
 
               <div class="project-meta-header">
 
-                <span class="project-category-badge">E-Commerce & Retail Automation</span>
+                <span class="project-category-badge" data-i18n="project_badge_cat">E-Commerce & Retail Automation</span>
 
                 <span class="project-verified-badge">
 
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                  Live Production System
+                  <span data-i18n="project_badge_status">Live Production System</span>
 
                 </span>
 
               </div>
 
-              <h3 class="project-title">aDawliah Meta & WhatsApp Conversational Sales Engine</h3>
+              <h3 class="project-title" data-i18n="project_adawliah_title">aDawliah Meta & WhatsApp Conversational Sales Engine</h3>
 
               
 
-              <p class="project-desc">
+              <p class="project-desc" data-i18n="project_adawliah_desc">
                 Architected an omnichannel AI sales assistant for <strong>aDawliah</strong> (Saudi Arabia's premier musical instrument & audio gear chain) to eliminate customer wait times. The video on the left captures the agent engaging customers live in real time: verifying branch inventory, recommending audio equipment matching the buyer's budget, and routing high-intent shoppers directly to branch visits and checkout.
               </p>
 
@@ -564,9 +574,9 @@
 
                   <div>
 
-                    <div class="highlight-label">&lt; 20s Instant 24/7 Response</div>
+                    <div class="highlight-label" data-i18n="highlight1_label">&lt; 20s Instant 24/7 Response</div>
 
-                    <div class="highlight-sub">Slashed peak wait times from 2+ hours to under 20 seconds on WhatsApp & Instagram—capturing midnight and weekend buyers immediately.</div>
+                    <div class="highlight-sub" data-i18n="highlight1_sub">Slashed peak wait times from 2+ hours to under 20 seconds on WhatsApp & Instagram—capturing midnight and weekend buyers immediately.</div>
 
                   </div>
 
@@ -582,9 +592,9 @@
 
                   <div>
 
-                    <div class="highlight-label">12,000+ Monthly Inquiries Automated</div>
+                    <div class="highlight-label" data-i18n="highlight2_label">12,000+ Monthly Inquiries Automated</div>
 
-                    <div class="highlight-sub">Processed repetitive product queries, price checks, and branch directions automatically with zero additional support hires.</div>
+                    <div class="highlight-sub" data-i18n="highlight2_sub">Processed repetitive product queries, price checks, and branch directions automatically with zero additional support hires.</div>
 
                   </div>
 
@@ -600,9 +610,9 @@
 
                   <div>
 
-                    <div class="highlight-label">500+ SKUs & Live Branch Inventory</div>
+                    <div class="highlight-label" data-i18n="highlight3_label">500+ SKUs & Live Branch Inventory</div>
 
-                    <div class="highlight-sub">Real-time catalog synchronization verifies physical branch stock availability across Saudi Arabia and prevents overselling.</div>
+                    <div class="highlight-sub" data-i18n="highlight3_sub">Real-time catalog synchronization verifies physical branch stock availability across Saudi Arabia and prevents overselling.</div>
 
                   </div>
 
@@ -618,9 +628,9 @@
 
                   <div>
 
-                    <div class="highlight-label">+35% Lead Qualification & Hot Handover</div>
+                    <div class="highlight-label" data-i18n="highlight4_label">+35% Lead Qualification & Hot Handover</div>
 
-                    <div class="highlight-sub">Filters out tire-kickers and escalates high-ticket audio gear buyers directly to sales reps with complete conversation summaries.</div>
+                    <div class="highlight-sub" data-i18n="highlight4_sub">Filters out tire-kickers and escalates high-ticket audio gear buyers directly to sales reps with complete conversation summaries.</div>
 
                   </div>
 
@@ -650,13 +660,13 @@
 
         <div class="section-header reveal-on-scroll">
 
-          <span class="section-eyebrow">CORE CAPABILITIES</span>
+          <span class="section-eyebrow" data-i18n="offers_eyebrow">CORE CAPABILITIES</span>
 
-          <h2 class="section-title">Full-Stack AI Agent Infrastructure</h2>
+          <h2 class="section-title" data-i18n="offers_title">Full-Stack AI Agent Infrastructure</h2>
 
           <p class="section-desc">
 
-            End-to-end engineering from conversational prompt calibration to production database synchronization.
+            <span data-i18n="offers_desc">End-to-end engineering from conversational prompt calibration to production database synchronization.</span>
 
           </p>
 
@@ -674,9 +684,9 @@
 
             </div>
 
-            <h3 class="offer-card-title">Autonomous Sales Agents (Instagram & Meta DMs)</h3>
+            <h3 class="offer-card-title" data-i18n="card1_title">Autonomous Sales Agents (Instagram & Meta DMs)</h3>
 
-            <p class="offer-card-desc">Never let a customer go cold. The AI qualifies incoming buyer intent, answers questions instantly, recommends matching products, overcomes hesitations, and guides shoppers straight to checkout.</p>
+            <p class="offer-card-desc" data-i18n="card1_desc">Never let a customer go cold. The AI qualifies incoming buyer intent, answers questions instantly, recommends matching products, overcomes hesitations, and guides shoppers straight to checkout.</p>
 
             <div class="offer-tech-footer">
 
@@ -702,9 +712,9 @@
 
             </div>
 
-            <h3 class="offer-card-title">WhatsApp Sales & Retention Engine</h3>
+            <h3 class="offer-card-title" data-i18n="card2_title">WhatsApp Sales & Retention Engine</h3>
 
-            <p class="offer-card-desc">Turn your WhatsApp number into an automated 24/7 storefront. Sends interactive product catalogs, delivers real-time order tracking, recovers abandoned inquiries, and shares instant payment links.</p>
+            <p class="offer-card-desc" data-i18n="card2_desc">Turn your WhatsApp number into an automated 24/7 storefront. Sends interactive product catalogs, delivers real-time order tracking, recovers abandoned inquiries, and shares instant payment links.</p>
 
             <div class="offer-tech-footer">
 
@@ -728,9 +738,9 @@
 
             </div>
 
-            <h3 class="offer-card-title">Strict Price & Catalog Protection</h3>
+            <h3 class="offer-card-title" data-i18n="card3_title">Strict Price & Catalog Protection</h3>
 
-            <p class="offer-card-desc">Rock-solid brand safety: the AI never guesses or invents numbers. It strictly retrieves verified prices, stock availability, and specifications directly from your official inventory documentation.</p>
+            <p class="offer-card-desc" data-i18n="card3_desc">Rock-solid brand safety: the AI never guesses or invents numbers. It strictly retrieves verified prices, stock availability, and specifications directly from your official inventory documentation.</p>
 
             <div class="offer-tech-footer">
 
@@ -756,9 +766,9 @@
 
             </div>
 
-            <h3 class="offer-card-title">Real-Time CRM & Live Inventory Synchronization</h3>
+            <h3 class="offer-card-title" data-i18n="card4_title">Real-Time CRM & Live Inventory Synchronization</h3>
 
-            <p class="offer-card-desc">Zero manual copy-pasting for your staff. Every lead phone number, conversation summary, and order request is automatically synchronized with your CRM, Google Sheets, or ERP in real time.</p>
+            <p class="offer-card-desc" data-i18n="card4_desc">Zero manual copy-pasting for your staff. Every lead phone number, conversation summary, and order request is automatically synchronized with your CRM, Google Sheets, or ERP in real time.</p>
 
             <div class="offer-tech-footer">
 
@@ -784,9 +794,9 @@
 
             </div>
 
-            <h3 class="offer-card-title">Smart Handover to Human Sales Reps</h3>
+            <h3 class="offer-card-title" data-i18n="card5_title">Smart Handover to Human Sales Reps</h3>
 
-            <p class="offer-card-desc">When a high-ticket customer is ready to close or requests custom assistance, the AI instantly notifies your human sales reps with a complete 3-bullet summary of the buyer's needs and chat history.</p>
+            <p class="offer-card-desc" data-i18n="card5_desc">When a high-ticket customer is ready to close or requests custom assistance, the AI instantly notifies your human sales reps with a complete 3-bullet summary of the buyer's needs and chat history.</p>
 
             <div class="offer-tech-footer">
 
@@ -822,7 +832,7 @@
               </div>
               <div class="about-text-content">
                 <p class="about-paragraph">
-                  I am currently pursuing my undergraduate studies at <span class="about-highlight">Al Ryada University for Science and Technology</span>, where I am building a strong academic foundation in modern technology and scientific thinking.
+                  <span data-i18n="about_f1_text">I am currently pursuing my undergraduate studies at <span class="about-highlight">Al Ryada University for Science and Technology</span>, where I am building a strong academic foundation in modern technology and scientific thinking.</span>
                 </p>
               </div>
             </div>
@@ -834,7 +844,7 @@
               </div>
               <div class="about-text-content">
                 <p class="about-paragraph">
-                  At the Faculty of Computers and Artificial Intelligence, I focus on building AI-powered automation systems that turn complex workflows into intelligent, efficient solutions.
+                  <span data-i18n="about_f2_text">At the Faculty of Computers and Artificial Intelligence, I focus on building AI-powered automation systems that turn complex workflows into intelligent, efficient solutions.</span>
                 </p>
               </div>
             </div>
@@ -855,13 +865,13 @@
 
         <div class="section-header reveal-on-scroll">
 
-          <span class="section-eyebrow">TRANSPARENT ENGAGEMENTS</span>
+          <span class="section-eyebrow" data-i18n="pricing_eyebrow">TRANSPARENT ENGAGEMENTS</span>
 
-          <h2 class="section-title">Engineered for High-ROI Business Outcomes</h2>
+          <h2 class="section-title" data-i18n="pricing_title">Engineered for High-ROI Business Outcomes</h2>
 
           <p class="section-desc">
 
-            Deterministic delivery sprints with clear technical deliverables, zero monthly bot software markups, and full IP ownership.
+            <span data-i18n="pricing_desc">Deterministic delivery sprints with clear technical deliverables, zero monthly bot software markups, and full IP ownership.</span>
 
           </p>
 
@@ -873,13 +883,13 @@
 
           <div class="pricing-card reveal-on-scroll">
 
-            <h3 class="pricing-plan-name">Sprint Automation</h3>
+            <h3 class="pricing-plan-name" data-i18n="plan1_name">Sprint Automation</h3>
 
-            <p class="pricing-plan-pitch">Ideal for businesses needing a dedicated 24/7 lead qualifier on a single channel.</p>
+            <p class="pricing-plan-pitch" data-i18n="plan1_pitch">Ideal for businesses needing a dedicated 24/7 lead qualifier on a single channel.</p>
 
             <div class="pricing-price-box">
 
-              <div class="pricing-price-tag">Starting from $450</div>
+              <div class="pricing-price-tag" data-i18n="plan1_price">Starting from $450</div>
 
             </div>
 
@@ -889,7 +899,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Single DM channel (Instagram or WhatsApp)
+                <span data-i18n="plan1_f1">Single DM channel (Instagram or WhatsApp)</span>
 
               </li>
 
@@ -897,7 +907,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Pre-trained FAQ & Lead Qualification flow
+                <span data-i18n="plan1_f2">Pre-trained FAQ & Lead Qualification flow</span>
 
               </li>
 
@@ -905,7 +915,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Google Sheets / Email lead capture sync
+                <span data-i18n="plan1_f3">Google Sheets / Email lead capture sync</span>
 
               </li>
 
@@ -913,7 +923,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Human agent handover trigger
+                <span data-i18n="plan1_f4">Human agent handover trigger</span>
 
               </li>
 
@@ -921,13 +931,13 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                7–10 days deployment sprint
+                <span data-i18n="plan1_f5">7–10 days deployment sprint</span>
 
               </li>
 
             </ul>
 
-            <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'm%20interested%20in%20the%20Sprint%20Automation%20plan%20($450)." target="_blank" rel="noopener noreferrer" class="btn btn-secondary pricing-cta">Inquire on WhatsApp</a>
+            <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'm%20interested%20in%20the%20Sprint%20Automation%20plan%20($450)." target="_blank" rel="noopener noreferrer" class="btn btn-secondary pricing-cta" data-i18n="plan1_cta">Inquire on WhatsApp</a>
 
           </div>
 
@@ -935,15 +945,15 @@
 
           <div class="pricing-card pricing-card-highlight reveal-on-scroll stagger-1">
 
-            <span class="pricing-highlight-badge">RECOMMENDED • BEST VALUE</span>
+            <span class="pricing-highlight-badge" data-i18n="plan2_badge">RECOMMENDED • BEST VALUE</span>
 
-            <h3 class="pricing-plan-name">Growth Sales Funnel</h3>
+            <h3 class="pricing-plan-name" data-i18n="plan2_name">Growth Sales Funnel</h3>
 
-            <p class="pricing-plan-pitch">Complete automated sales infrastructure for brands scaling ad-driven conversation volume.</p>
+            <p class="pricing-plan-pitch" data-i18n="plan2_pitch">Complete automated sales infrastructure for brands scaling ad-driven conversation volume.</p>
 
             <div class="pricing-price-box">
 
-              <div class="pricing-price-tag">Starting from $950</div>
+              <div class="pricing-price-tag" data-i18n="plan2_price">Starting from $950</div>
 
             </div>
 
@@ -953,7 +963,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Dual-channel setup (Meta DMs + WhatsApp Cloud)
+                <span data-i18n="plan2_f1">Dual-channel setup (Meta DMs + WhatsApp Cloud)</span>
 
               </li>
 
@@ -961,7 +971,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Dynamic Product Catalog RAG integration
+                <span data-i18n="plan2_f2">Dynamic Product Catalog RAG integration</span>
 
               </li>
 
@@ -969,7 +979,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Live CRM sync (HubSpot, Shopify, or Custom DB)
+                <span data-i18n="plan2_f3">Live CRM sync (HubSpot, Shopify, or Custom DB)</span>
 
               </li>
 
@@ -977,7 +987,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Advanced objection handling & checkout links
+                <span data-i18n="plan2_f4">Advanced objection handling & checkout links</span>
 
               </li>
 
@@ -985,7 +995,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Real-time rep escalation dashboard
+                <span data-i18n="plan2_f5">Real-time rep escalation dashboard</span>
 
               </li>
 
@@ -993,13 +1003,13 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                14-day delivery sprint + 30-day monitoring
+                <span data-i18n="plan2_f6">14-day delivery sprint + 30-day monitoring</span>
 
               </li>
 
             </ul>
 
-            <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'm%20interested%20in%20the%20Growth%20Sales%20Funnel%20plan%20($950)." target="_blank" rel="noopener noreferrer" class="btn btn-primary pricing-cta">Book via WhatsApp</a>
+            <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'm%20interested%20in%20the%20Growth%20Sales%20Funnel%20plan%20($950)." target="_blank" rel="noopener noreferrer" class="btn btn-primary pricing-cta" data-i18n="plan2_cta">Book via WhatsApp</a>
 
           </div>
 
@@ -1007,13 +1017,13 @@
 
           <div class="pricing-card reveal-on-scroll stagger-2">
 
-            <h3 class="pricing-plan-name">Custom Architecture</h3>
+            <h3 class="pricing-plan-name" data-i18n="plan3_name">Custom Architecture</h3>
 
-            <p class="pricing-plan-pitch">For enterprise systems requiring deep internal database coordination and custom microservices.</p>
+            <p class="pricing-plan-pitch" data-i18n="plan3_pitch">For enterprise systems requiring deep internal database coordination and custom microservices.</p>
 
             <div class="pricing-price-box">
 
-              <div class="pricing-price-tag">Custom Quote</div>
+              <div class="pricing-price-tag" data-i18n="plan3_price">Custom Quote</div>
 
             </div>
 
@@ -1023,7 +1033,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Multi-system enterprise integration
+                <span data-i18n="plan3_f1">Multi-system enterprise integration</span>
 
               </li>
 
@@ -1031,7 +1041,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Proprietary vector store & private RAG
+                <span data-i18n="plan3_f2">Proprietary vector store & private RAG</span>
 
               </li>
 
@@ -1039,7 +1049,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Custom FastAPI microservice hosting & SLA
+                <span data-i18n="plan3_f3">Custom FastAPI microservice hosting & SLA</span>
 
               </li>
 
@@ -1047,7 +1057,7 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Full automated testing & CI/CD pipeline
+                <span data-i18n="plan3_f4">Full automated testing & CI/CD pipeline</span>
 
               </li>
 
@@ -1055,13 +1065,13 @@
 
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-                Dedicated support & ongoing performance tuning
+                <span data-i18n="plan3_f5">Dedicated support & ongoing performance tuning</span>
 
               </li>
 
             </ul>
 
-            <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'd%20like%20to%20discuss%20a%20Custom%20Architecture%20scope." target="_blank" rel="noopener noreferrer" class="btn btn-secondary pricing-cta">Discuss on WhatsApp</a>
+            <a href="https://wa.me/201201212301?text=Hello%20Mohammed,%20I'd%20like%20to%20discuss%20a%20Custom%20Architecture%20scope." target="_blank" rel="noopener noreferrer" class="btn btn-secondary pricing-cta" data-i18n="plan3_cta">Discuss on WhatsApp</a>
 
           </div>
 
@@ -1083,13 +1093,13 @@
 
         <div class="section-header reveal-on-scroll">
 
-          <span class="section-eyebrow">COMMON INQUIRIES</span>
+          <span class="section-eyebrow" data-i18n="faq_eyebrow">COMMON INQUIRIES</span>
 
-          <h2 class="section-title">Clear Answers on Architecture & Delivery</h2>
+          <h2 class="section-title" data-i18n="faq_title">Clear Answers on Architecture & Delivery</h2>
 
           <p class="section-desc">
 
-            Direct explanations addressing system precision, platform integrations, and operational safety.
+            <span data-i18n="faq_desc">Direct explanations addressing system precision, platform integrations, and operational safety.</span>
 
           </p>
 
@@ -1103,7 +1113,7 @@
 
             <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-1">
 
-              <span>How do you prevent the AI agent from hallucinating or quoting wrong prices?</span>
+              <span data-i18n="faq_q1">How do you prevent the AI agent from hallucinating or quoting wrong prices?</span>
 
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
 
@@ -1115,7 +1125,7 @@
 
                 <p class="faq-answer-text">
 
-                  I implement strict Retrieval-Augmented Generation (RAG) pipelines with deterministic query boundaries. The AI agent is constrained to retrieve verified information solely from your live inventory database and canonical documentation. If a parameter or price falls outside the retrieved dataset, the agent follows strict fallback protocols rather than guessing.
+                  <span data-i18n="faq_a1">I implement strict Retrieval-Augmented Generation (RAG) pipelines with deterministic query boundaries. The AI agent is constrained to retrieve verified information solely from your live inventory database and canonical documentation. If a parameter or price falls outside the retrieved dataset, the agent follows strict fallback protocols rather than guessing.</span>
 
                 </p>
 
@@ -1131,7 +1141,7 @@
 
             <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2">
 
-              <span>Can the agent integrate directly with our existing Shopify, WooCommerce, or custom CRM?</span>
+              <span data-i18n="faq_q2">Can the agent integrate directly with our existing Shopify, WooCommerce, or custom CRM?</span>
 
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
 
@@ -1143,7 +1153,7 @@
 
                 <p class="faq-answer-text">
 
-                  Yes. All agents are built on standard RESTful webhooks and FastAPI microservices. We connect directly into Shopify Admin APIs, WooCommerce REST, HubSpot, Zoho, or your internal PostgreSQL database to look up real-time orders, SKU stock counts, and customer histories.
+                  <span data-i18n="faq_a2">Yes. All agents are built on standard RESTful webhooks and FastAPI microservices. We connect directly into Shopify Admin APIs, WooCommerce REST, HubSpot, Zoho, or your internal PostgreSQL database to look up real-time orders, SKU stock counts, and customer histories.</span>
 
                 </p>
 
@@ -1159,7 +1169,7 @@
 
             <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-3">
 
-              <span>What happens when a customer asks a question outside the bot's training data?</span>
+              <span data-i18n="faq_q3">What happens when a customer asks a question outside the bot's training data?</span>
 
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
 
@@ -1171,7 +1181,7 @@
 
                 <p class="faq-answer-text">
 
-                  The system triggers a graceful Human-in-the-Loop handover. It politely notifies the customer that a human specialist is taking over, pauses automated triggers for that specific thread, and alerts your customer support team via Slack, WhatsApp, or email with a synthesized transcript summary.
+                  <span data-i18n="faq_a3">The system triggers a graceful Human-in-the-Loop handover. It politely notifies the customer that a human specialist is taking over, pauses automated triggers for that specific thread, and alerts your customer support team via Slack, WhatsApp, or email with a synthesized transcript summary.</span>
 
                 </p>
 
@@ -1187,7 +1197,7 @@
 
             <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-4">
 
-              <span>How long does a typical implementation take from kickoff to go-live?</span>
+              <span data-i18n="faq_q4">How long does a typical implementation take from kickoff to go-live?</span>
 
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
 
@@ -1199,7 +1209,7 @@
 
                 <p class="faq-answer-text">
 
-                  A standard Sprint Automation takes 7 to 10 business days. Comprehensive Growth Funnels requiring dual Meta + WhatsApp setups, catalog ingestion, and CRM bidirectional webhooks typically ship within 14 business days, accompanied by end-to-end sandbox testing before live traffic is directed.
+                  <span data-i18n="faq_a4">A standard Sprint Automation takes 7 to 10 business days. Comprehensive Growth Funnels requiring dual Meta + WhatsApp setups, catalog ingestion, and CRM bidirectional webhooks typically ship within 14 business days, accompanied by end-to-end sandbox testing before live traffic is directed.</span>
 
                 </p>
 
@@ -1215,7 +1225,7 @@
 
             <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-5">
 
-              <span>Will our team be able to monitor conversations and take over when needed?</span>
+              <span data-i18n="faq_q5">Will our team be able to monitor conversations and take over when needed?</span>
 
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
 
@@ -1227,7 +1237,7 @@
 
                 <p class="faq-answer-text">
 
-                  Absolutely. All conversations reside directly within your native Meta Business Suite Inbox or WhatsApp Business app. Your team retains 100% visibility at all times, and typing a manual reply immediately mutes automated responses on that thread.
+                  <span data-i18n="faq_a5">Absolutely. All conversations reside directly within your native Meta Business Suite Inbox or WhatsApp Business app. Your team retains 100% visibility at all times, and typing a manual reply immediately mutes automated responses on that thread.</span>
 
                 </p>
 
@@ -1319,7 +1329,7 @@
 
 </svg>
 
-          <p class="footer-brand-tagline">
+          <p class="footer-brand-tagline" data-i18n="footer_tagline">
 
             Architecting production-grade conversational AI systems and automated conversion funnels. Built with precision, speed, and architectural integrity.
 
@@ -1331,7 +1341,7 @@
 
         <div class="footer-contact-box">
 
-          <div class="footer-contact-title">Let's Discuss Your Automation Needs</div>
+          <div class="footer-contact-title" data-i18n="footer_contact_title">Let's Discuss Your Automation Needs</div>
 
           <div class="footer-email-clipboard">
 
@@ -1381,9 +1391,9 @@
 
       <div class="footer-bottom-bar">
 
-        <span>&copy; 2026 Mohammed Waleed (WELO). All rights reserved.</span>
+        <span data-i18n="footer_copyright">&copy; 2026 Mohammed Waleed (WELO). All rights reserved.</span>
 
-        <span>AI Automation Engineer • Production Conversational Systems</span>
+        <span data-i18n="footer_bottom_sub">AI Automation Engineer • Production Conversational Systems</span>
 
       </div>
 
@@ -1397,13 +1407,13 @@
 
     <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
-    <span class="toast-text">Email copied to clipboard!</span>
+    <span class="toast-text" data-i18n="toast_email_copied">Email copied to clipboard!</span>
 
   </div>
 
   <!-- Standalone Interactive JavaScript (Runs on file:// and http://) -->
 
-  <script src="src/js/main.js?v=3.6" defer></script>
+  <script src="src/js/main.js?v=3.7" defer></script>
 
 </body>
 

@@ -3435,3 +3435,166 @@ button {
     font-size: 0.8rem;
   }
 }
+
+/* ==========================================================================
+   BILINGUAL (ARABIC / RTL) & CAPABILITIES GRID CENTERING ENHANCEMENTS
+   ========================================================================== */
+
+/* 1. Language Toggle Buttons */
+.lang-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  user-select: none;
+  line-height: 1;
+}
+
+.lang-toggle-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: #0066BE;
+  color: #0066BE;
+  transform: translateY(-1px);
+}
+
+.lang-globe-icon {
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+.mobile-lang-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mobile-lang-toggle-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: #0066BE;
+  color: #0066BE;
+}
+
+/* 2. Capabilities Grid Centering (Cards 4 & 5 centered under Cards 1, 2, 3) */
+@media (min-width: 1024px) {
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.75rem;
+  }
+
+  .offers-grid > .offer-card:nth-child(1),
+  .offers-grid > .offer-card:nth-child(2),
+  .offers-grid > .offer-card:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .offers-grid > .offer-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .offers-grid > .offer-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+}
+
+/* 3. RTL and Arabic Typography Overrides */
+html[lang="ar"] {
+  direction: rtl;
+  text-align: right;
+  --font-display: 'Cairo', sans-serif;
+  --font-heading: 'Cairo', sans-serif;
+  --font-sans: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] .section-title,
+html[lang="ar"] .hero-title,
+html[lang="ar"] .project-title,
+html[lang="ar"] .offer-card-title,
+html[lang="ar"] .pricing-plan-name,
+html[lang="ar"] .accordion-title {
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 0;
+}
+
+html[lang="ar"] body,
+html[lang="ar"] p,
+html[lang="ar"] span,
+html[lang="ar"] a,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] textarea {
+  font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Stat divider in hero (border-right instead of border-left in RTL) */
+html[lang="ar"] .hero-stat-item:last-child {
+  border-left: none;
+  border-right: 2px solid #E2E8F0;
+  padding-left: 0;
+  padding-right: 2.25rem;
+}
+
+@media (max-width: 640px) {
+  html[lang="ar"] .hero-stat-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+/* FAQ Icon in RTL */
+html[lang="ar"] .faq-icon {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Pricing feature list in RTL */
+html[lang="ar"] .pricing-feature-item {
+  text-align: right;
+}
+
+html[lang="ar"] .pricing-feature-item svg {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+
+/* Audio button placement in RTL */
+html[lang="ar"] .showcase-audio-btn {
+  right: auto;
+  left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  html[lang="ar"] .showcase-audio-btn {
+    right: auto;
+    left: 0.85rem;
+  }
+}
