@@ -62,43 +62,6 @@
   /**
    * 2. Active Section Spy for Navigation Bar
    */
-  /**
-   * Certificates Section Scroll Pinning Transition
-   * Transitions between Frame 1 (Huawei) and Frame 2 (Orange)
-   * while the certificates section remains pinned in place.
-   */
-  function initCertificatesScrollPinning() {
-    var pinWrapper = document.getElementById('certificates-pinned-wrapper');
-    var frame1 = document.getElementById('cert-frame-1');
-    var frame2 = document.getElementById('cert-frame-2');
-    if (!pinWrapper || !frame1 || !frame2) return;
-
-    var ticking = false;
-
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(function () {
-          var rect = pinWrapper.getBoundingClientRect();
-          var scrolled = -rect.top;
-
-          // Transition when scrolled down past 120px
-          if (scrolled >= 120) {
-            frame1.classList.add('is-hidden');
-            frame2.classList.add('is-active');
-          } else {
-            frame1.classList.remove('is-hidden');
-            frame2.classList.remove('is-active');
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
   function initActiveNavSpy() {
     var sections = document.querySelectorAll('section[id]');
     var navLinks = document.querySelectorAll('.nav-link');
@@ -326,13 +289,13 @@
           var scrolled = -rect.top;
 
           // Stage 1: Frame 1 (Mohammed Waleed / AI Automation Engineer)
-          if (scrolled < 70) {
+          if (scrolled < 180) {
             frame1.classList.remove('is-hidden');
             frame2.classList.remove('is-active', 'is-hidden');
             if (frame3) frame3.classList.remove('is-active');
           } 
           // Stage 2: Frame 2 (AI Sales Agents That Close Deals in Your DMs)
-          else if (scrolled >= 70 && scrolled < 450) {
+          else if (scrolled >= 180 && scrolled < 360) {
             frame1.classList.add('is-hidden');
             frame2.classList.remove('is-hidden');
             frame2.classList.add('is-active');
@@ -373,8 +336,8 @@
           var rect = pinWrapper.getBoundingClientRect();
           var scrolled = -rect.top;
 
-          // Transition when scrolled down past 120px
-          if (scrolled >= 120) {
+          // Transition when scrolled down past 180px
+          if (scrolled >= 180) {
             frame1.classList.add('is-hidden');
             frame2.classList.add('is-active');
           } else {
@@ -395,17 +358,171 @@
   /**
    * Bootstrapping on DOM Ready
    */
+  /**
+   * 7. Hero Showcase Video Autoplay & Smart Sound Management
+   */
+  function initShowcaseVideo() {
+    var video = document.getElementById('hero-showcase-video');
+    var btn = document.getElementById('showcase-audio-btn');
+    var videoBox = document.querySelector('.hero-showcase-video-box');
+    if (!video) return;
+
+    var userHasInteracted = false;
+    var isUnmuted = false;
+    var fadeTimer = null;
+
+    function updateButtonUI(unmuted) {
+      if (!btn) return;
+      if (fadeTimer) {
+        clearTimeout(fadeTimer);
+        fadeTimer = null;
+      }
+      if (unmuted) {
+        btn.innerHTML = '<span class="audio-btn-icon" aria-hidden="true">🔊</span><span class="audio-btn-text">Sound On</span>';
+        btn.classList.add('is-unmuted');
+        btn.classList.remove('is-faded');
+        btn.setAttribute('aria-label', 'Mute Video');
+        // Fade to transparent after 3 seconds so it does not obstruct the video
+        fadeTimer = setTimeout(function () {
+          if (isUnmuted && btn) {
+            btn.classList.add('is-faded');
+          }
+        }, 3000);
+      } else {
+        btn.innerHTML = '<span class="audio-btn-icon" aria-hidden="true">🔇</span><span class="audio-btn-text">Tap for Sound</span>';
+        btn.classList.remove('is-unmuted', 'is-faded');
+        btn.setAttribute('aria-label', 'Unmute Video');
+      }
+    }
+
+    function applyUnmute() {
+      video.muted = false;
+      video.defaultMuted = false;
+      video.volume = 1.0;
+      video.removeAttribute('muted');
+      isUnmuted = true;
+      updateButtonUI(true);
+      if (video.paused) {
+        video.play().catch(function () {});
+      }
+    }
+
+    function applyMute() {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute('muted', '');
+      isUnmuted = false;
+      updateButtonUI(false);
+    }
+
+    function toggleAudio() {
+      if (video.muted || !isUnmuted) {
+        applyUnmute();
+      } else {
+        applyMute();
+      }
+    }
+
+    // 1. Direct click/tap on Sound Button
+    if (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        userHasInteracted = true;
+        toggleAudio();
+      });
+    }
+
+    // 2. Click anywhere on Video Box
+    if (videoBox) {
+      videoBox.addEventListener('click', function (e) {
+        if (e.target.closest('#showcase-audio-btn')) return;
+        userHasInteracted = true;
+        toggleAudio();
+      });
+    }
+
+    // 3. User interaction listener anywhere on the page
+    // As soon as the user touches, clicks, or interacts with the page,
+    // if the video is currently in the viewport, automatically unmute!
+    function onFirstUserGesture() {
+      userHasInteracted = true;
+      var rect = video.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (inView && !isUnmuted) {
+        applyUnmute();
+      }
+      window.removeEventListener('click', onFirstUserGesture);
+      window.removeEventListener('touchstart', onFirstUserGesture);
+    }
+    window.addEventListener('click', onFirstUserGesture, { passive: true });
+    window.addEventListener('touchstart', onFirstUserGesture, { passive: true });
+
+    // 4. Initial Autoplay: start muted for strict browser policy compliance
+    video.volume = 1.0;
+    video.muted = true;
+    var playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function () {
+        // If autoplay was deferred until interaction
+        var resumeOnGesture = function () {
+          video.play().catch(function () {});
+          window.removeEventListener('touchstart', resumeOnGesture);
+          window.removeEventListener('click', resumeOnGesture);
+          window.removeEventListener('scroll', resumeOnGesture);
+        };
+        window.addEventListener('touchstart', resumeOnGesture, { once: true, passive: true });
+        window.addEventListener('click', resumeOnGesture, { once: true, passive: true });
+        window.addEventListener('scroll', resumeOnGesture, { once: true, passive: true });
+      });
+    }
+
+    // 5. IntersectionObserver: Pause when out of view, resume when back in view
+    // CRITICAL: NEVER touch video.muted here so we preserve user unmuted state!
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            if (video.paused) {
+              video.play().catch(function () {});
+            }
+            if (userHasInteracted && !isUnmuted) {
+              applyUnmute();
+            }
+          } else {
+            if (!video.paused) {
+              video.pause();
+            }
+          }
+        });
+      }, { threshold: 0.15 });
+
+      observer.observe(video);
+    }
+
+    // 6. Handle tab visibility changes
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) {
+        var rect = video.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          if (video.paused) video.play().catch(function () {});
+        }
+      } else {
+        if (!video.paused) video.pause();
+      }
+    });
+  }
+
   function init() {
     initScrollReveal();
     initHeroScrollPinning();
-    initAboutScrollPinning();
-    initCertificatesScrollPinning();
+    initAboutScrollPinning();
     initActiveNavSpy();
     initMobileNav();
     initAccordion();
     initClipboard();
-    initVideoControls();
-    console.log('Mohamed Waleed Portfolio initialized successfully (CORS-free standalone mode).');
+    initVideoControls();
+    initShowcaseVideo();
+    console.log('Mohammed Waleed Portfolio initialized successfully (CORS-free standalone mode).');
   }
 
   if (document.readyState === 'loading') {
