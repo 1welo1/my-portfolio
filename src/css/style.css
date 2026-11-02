@@ -2189,14 +2189,16 @@ button {
 
 @media (min-width: 900px) {
   .project-card-split {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 265px 1fr;
     gap: 2.25rem;
+    align-items: center;
   }
 }
 @media (min-width: 1100px) {
   .project-card-split {
-    grid-template-columns: 255px 1fr;
-    gap: 2.75rem;
+    grid-template-columns: 275px 1fr;
+    gap: 2.5rem;
+    align-items: center;
   }
 }
 .project-video-col {
@@ -2207,22 +2209,24 @@ button {
 }
 .phone-frame-wrapper {
   width: 100%;
-  max-width: 255px;
-  background: #0B111E;
-  border-radius: 34px;
+  max-width: 275px;
+  max-height: min(570px, 78vh);
+  background: linear-gradient(145deg, #151D2A, #0A0F1A);
+  border-radius: 38px;
   padding: 8px;
-  box-shadow: 0 16px 36px -8px rgba(28, 39, 64, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 48px -10px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.2);
   border: 1px solid var(--border-card-focus);
   position: relative;
   transition: transform var(--transition-base), box-shadow var(--transition-base);
+  box-sizing: border-box;
 }
 .project-card-split:hover .phone-frame-wrapper {
   transform: translateY(-2px);
-  box-shadow: 0 20px 44px -10px rgba(28, 39, 64, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 24px 52px -10px rgba(15, 23, 42, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
 .phone-screen {
   position: relative;
-  border-radius: 26px;
+  border-radius: 30px;
   overflow: hidden;
   aspect-ratio: 9 / 19.5;
   background: #000000;
@@ -2234,10 +2238,10 @@ button {
   top: 7px;
   left: 50%;
   transform: translateX(-50%);
-  width: 64px;
+  width: 68px;
   height: 18px;
   background: #000000;
-  border-radius: 14px;
+  border-radius: 12px;
   z-index: 15;
   pointer-events: none;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -2306,23 +2310,22 @@ button {
 }
 
 .project-highlights-grid {
-
-  display: flex;
-
-  flex-direction: column;
-
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0.85rem;
-
-  margin-bottom: 1.5rem;
-
+  margin-bottom: 1.25rem;
   background: var(--bg-primary);
-
   border: 1px solid var(--border-card);
-
   border-radius: var(--radius-md);
-
   padding: 1.15rem 1.35rem;
+}
 
+@media (min-width: 640px) {
+  .project-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem 1.25rem;
+    padding: 1rem 1.25rem;
+  }
 }
 
 .highlight-item {
