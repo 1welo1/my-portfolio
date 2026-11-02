@@ -844,7 +844,7 @@ button {
 
 .hero-pinned-wrapper {
   position: relative;
-  min-height: 155vh;
+  min-height: 200vh;
 }
 
 .hero-sticky {
@@ -901,11 +901,11 @@ button {
 
   align-items: flex-start;
 
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+  transition: opacity 0.55s cubic-bezier(0.2, 0.9, 0.3, 1),
 
-              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.2, 0.9, 0.3, 1),
 
-              filter 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+              filter 0.55s cubic-bezier(0.2, 0.9, 0.3, 1);
 
   will-change: opacity, transform, filter;
 
@@ -1875,7 +1875,7 @@ button {
 /* --- About Section Scroll Pinning Architecture --- */
 .about-pinned-wrapper {
   position: relative;
-  min-height: 135vh;
+  min-height: 160vh;
 }
 
 .about-sticky {
@@ -1921,9 +1921,9 @@ button {
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
   width: 100%;
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.55s cubic-bezier(0.2, 0.9, 0.3, 1),
+              transform 0.55s cubic-bezier(0.2, 0.9, 0.3, 1),
+              filter 0.55s cubic-bezier(0.2, 0.9, 0.3, 1);
   will-change: opacity, transform, filter;
 }
 

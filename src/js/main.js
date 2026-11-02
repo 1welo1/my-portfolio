@@ -289,13 +289,13 @@
           var scrolled = -rect.top;
 
           // Stage 1: Frame 1 (Mohammed Waleed / AI Automation Engineer)
-          if (scrolled < 180) {
+          if (scrolled < 300) {
             frame1.classList.remove('is-hidden');
             frame2.classList.remove('is-active', 'is-hidden');
             if (frame3) frame3.classList.remove('is-active');
           } 
           // Stage 2: Frame 2 (AI Sales Agents That Close Deals in Your DMs)
-          else if (scrolled >= 180 && scrolled < 360) {
+          else if (scrolled >= 300 && scrolled < 600) {
             frame1.classList.add('is-hidden');
             frame2.classList.remove('is-hidden');
             frame2.classList.add('is-active');
@@ -336,8 +336,8 @@
           var rect = pinWrapper.getBoundingClientRect();
           var scrolled = -rect.top;
 
-          // Transition when scrolled down past 180px
-          if (scrolled >= 180) {
+          // Transition when scrolled down past 280px (medium comfortable pace)
+          if (scrolled >= 280) {
             frame1.classList.add('is-hidden');
             frame2.classList.add('is-active');
           } else {
